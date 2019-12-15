@@ -6,49 +6,59 @@
 //* Por cada dígito 3,5 o 7, añadiremos “Foo”, “Bar”, “Quix” respectivamente y en orden de aparición.
 
 
-    let result = "";
-    let control = 0;
-    let numArray;
 
+function countTo100(value) {
 
-    for (let i = 1; i <= 100; i++) {
+        let result = "";
+        let control = 0;
+        let numArray;
 
-        numArray = i.toString().split('');
-        result = "";
-        control = 0;
+    if (value <= 100 && !value == 0) {
 
-        if ( i % 3 === 0) {
-            result += "Foo";
-            control = 1;
-        }
+        for (let i = 1; i <= value; i++) {
 
-        if ( i % 5 === 0) {
-            result += 'Bar';
-            control = 1;       
-        }
+            numArray = i.toString().split('');
+            result = "";
+            control = 0;
 
-        if ( i % 7 === 0) {
-            result += 'Quix';
-            control = 1;
-        } 
-
-        if (!control) {
-            result = i;
-        }
-           
-        for (const numArrayOnly of numArray) {
-            if (numArrayOnly === '3') {
-                result += "Foo"
+            if ( i % 3 === 0) {
+                result += "Foo";
+                control = 1;
             }
 
-            if (numArrayOnly === '5') {
-                result += "Bar"
+            if ( i % 5 === 0) {
+                result += 'Bar';
+                control = 1;       
             }
 
-            if (numArrayOnly === '7') {
-                result += "Quix"
+            if ( i % 7 === 0) {
+                result += 'Quix';
+                control = 1;
+            } 
+
+            if (!control) {
+                result = i;
             }
+            
+            for (const numArrayOnly of numArray) {
+                if (numArrayOnly === '3') {
+                    result += "Foo"
+                }
+
+                if (numArrayOnly === '5') {
+                    result += "Bar"
+                }
+
+                if (numArrayOnly === '7') {
+                    result += "Quix"
+                }
+            }
+            
+            console.log(result);
         }
-        
-        console.log(result);
-    }         
+    } else {
+        console.log("Dont be troll, only 1-100.");
+    }
+}
+
+countTo100(20);
