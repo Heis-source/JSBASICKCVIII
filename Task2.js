@@ -125,3 +125,17 @@ function alAlandalus(value) {
 }
 
 alAlandalus('MCMCD');
+
+
+function romanChecker(value) {
+
+    let regexp = /^(M{0,3})(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/;
+    
+    if (regexp.test(value)) {
+        console.log("El numero romano le gustaria al mismisimo HULIO Cesar.");
+    } else {
+        console.log("HULIO Cesar no gustar este numero. HULIO enfadar.");
+    }
+}
+
+romanChecker('IIII');
